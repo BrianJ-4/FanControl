@@ -1,6 +1,8 @@
 # FanControl
 I wanted to make my fan controllable through Google Assisant so I came up with this Arduino project to make my normal fan into a smart Internet controlled fan.
 
+**Note: Project was completed in July 2020**
+
 ## The Process
 I originally thought that I could maybe replicate the commands that the remote sends to the fans. However I realized this method would be complicated because fans and their remotes use RF to communicate instead of IR and I didn't have any RF receivers or transmitters lying around to record and send signals. This led me to use an approach that involved the actual fan remote.
 
@@ -24,11 +26,12 @@ In order to do this I switched from a Arduino Uno to a NodeMCU ESP8266 board. Th
 So in order to combine all this, I created a IFTT applet for controlling fan speed, one for controlling light status, and one for turning the fan off. Each applet has a custom Google Assistant command. 
 For Example, when controlling fan speed, the assistant command is, "Set fan speed to ___". The blank being the keyword, high, medium, or low. This value is then passed to Remoteme where the speed variable is updated, and then the microcontroller will pick up that a change has happened in the variable and perform the appropriate action.
 
+## The Final Schematic
+![FanControlSchematic](https://github.com/BrianJ-4/FanControl/assets/84641264/8819f4fe-9b80-4fae-a917-59355ed4c38a)
+
 ## Tools/Services/Hardware Used
 * 8 Channel 5V Relay - To trigger button presses
 * Soldering Iron - For soldering wires to the remote PCB
 * IFTT - For bridging Google Assitant with custom HTTP Requests
 * Remoteme - For receiving HTTP Requests and updating variables based on the value from the requests
 * NodeMCU ESP8266 - For controlling the relays based on variable values in Remoteme
-
-**Note: Project was completed in June 2021**
