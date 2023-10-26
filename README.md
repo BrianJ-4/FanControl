@@ -21,9 +21,9 @@ After some soldering and wiring, I had this ( Ignore the poor soldering job. I d
 
 Connecting this to a Arduino Uno and triggering the relays worked perfectly. So the next step was to give it the ability to be controlled through the internet.
 
-In order to do this I switched from a Arduino Uno to a NodeMCU ESP8266 board. The onboard ESP8266 wifi microchip allowed me to control the board through the internet. But, I needed a way to bridge the microcontroller and Google Assistant. And after some research IFTT seemed like the best option. IFTT allowed for me to link custom Google Assistant commands with HTTP Requests that would contain a command word used to control the fan. In order to enable the microcontroller to get these requests I used a service called Remoteme. Remoteme hosted a server that I could send HTTP requests to in order to change the value of variables stored on the server. And then using the Remoteme Arduino library I could have my microcontroller listen for changes in the variables in the server and perform the appropriate actions.
+In order to do this I switched from a Arduino Uno to a NodeMCU ESP8266 board. The onboard ESP8266 wifi microchip allowed me to control the board through the internet. But, I needed a way to bridge the microcontroller and Google Assistant. And after some research IFTTT seemed like the best option. IFTTT allowed for me to link custom Google Assistant commands with HTTP Requests that would contain a command word used to control the fan. In order to enable the microcontroller to get these requests I used a service called Remoteme. Remoteme hosted a server that I could send HTTP requests to in order to change the value of variables stored on the server. And then using the Remoteme Arduino library I could have my microcontroller listen for changes in the variables in the server and perform the appropriate actions.
 
-So in order to combine all this, I created a IFTT applet for controlling fan speed, one for controlling light status, and one for turning the fan off. Each applet has a custom Google Assistant command. 
+So in order to combine all this, I created a IFTTT applet for controlling fan speed, one for controlling light status, and one for turning the fan off. Each applet has a custom Google Assistant command. 
 For Example, when controlling fan speed, the assistant command is, "Set fan speed to ___". The blank being the keyword, high, medium, or low. This value is then passed to Remoteme where the speed variable is updated, and then the microcontroller will pick up that a change has happened in the variable and perform the appropriate action.
 
 ## The Final Schematic
@@ -32,6 +32,6 @@ For Example, when controlling fan speed, the assistant command is, "Set fan spee
 ## Tools/Services/Hardware Used
 * 8 Channel 5V Relay - To trigger button presses
 * Soldering Iron - For soldering wires to the remote PCB
-* IFTT - For bridging Google Assitant with custom HTTP Requests
+* IFTTT - For bridging Google Assitant with custom HTTP Requests
 * Remoteme - For receiving HTTP Requests and updating variables based on the value from the requests
 * NodeMCU ESP8266 - For controlling the relays based on variable values in Remoteme
