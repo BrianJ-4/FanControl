@@ -32,6 +32,6 @@ For Example, when controlling fan speed, the assistant command is, "Set fan spee
 ## Tools/Services/Hardware Used
 * 8 Channel 5V Relay - To trigger button presses
 * Soldering Iron - For soldering wires to the remote PCB
-* IFTTT - For bridging Google Assitant with custom HTTP Requests
+* IFTTT - For bridging Google Assitant with HTTP Requests
 * Remoteme - For receiving HTTP Requests and updating variables based on the value from the requests
 * NodeMCU ESP8266 - For controlling the relays based on variable values in Remoteme
