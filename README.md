@@ -4,7 +4,7 @@ I wanted to make my fan controllable through Google Assisant so I came up with t
 **Note: Project was completed in July 2020**
 
 ## The Process
-I originally thought that I could maybe replicate the commands that the remote sends to the fans. However I realized this method would be complicated because fans and their remotes use RF to communicate instead of IR and I didn't have any RF receivers or transmitters lying around to record and send signals. This led me to use an approach that involved the actual fan remote.
+I originally thought that I could maybe replicate the commands that the remote sends to the fans. However I realized this method would be complicated because fans and their remotes use RF to communicate instead of IR and I didn't have any RF receivers or transmitters laying around to record and send signals. This led me to use an approach that involved the actual fan remote.
 
 Taking apart the fan remote and getting to the PCB I saw that the bottom of the buttons on the remote are covered with a conductive rubber like material which bridges two closely placed contacts for each button. So in order to simulate a button push I would need to bridge the two contacts for the button.
 
